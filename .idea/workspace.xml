@@ -3,13 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8966f719-3d7f-4278-8e62-f6078b076509" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/autocomplete/AutocompleteProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/autocomplete/AutocompleteProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/autocomplete/Candidate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/autocomplete/Candidate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/autocomplete/testAutoCompleteProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/autocomplete/testAutoCompleteProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AutocompleteProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AutocompleteProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Candidate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Candidate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WeightedTrie.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/testAutoCompleteProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/testAutoCompleteProvider.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,10 +63,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AutocompleteProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
+            <state relative-caret-position="587">
               <caret line="53" selection-start-line="53" selection-end-line="53" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -105,7 +98,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/testAutoCompleteProvider.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
@@ -180,7 +173,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536902320915" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536902611856" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -446,17 +439,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AutocompleteProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1424#1435#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -474,6 +456,17 @@
           <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AutocompleteProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="587">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1424#1435#0" expanded="true" />
           </folding>
         </state>
       </provider>
