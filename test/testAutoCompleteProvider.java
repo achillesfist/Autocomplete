@@ -1,6 +1,6 @@
 import org.junit.Test;
 
-import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by Evelyn on 7/20/2018.
@@ -11,10 +11,11 @@ public class testAutoCompleteProvider {
     public void testTrain(){
         AutocompleteProvider acp = new AutocompleteProvider();
         acp.train("Hello, my name is Dee and I would love to work for you, I love Hello");
-        acp.getCounts();
-
-        acp.train("Hello, Dee and I are on the way to the train");
-        acp.getCounts();
+        acp.train("hola, the weather is hazy and humid today and I love it");
+        List<Candidate> results = acp.getWords("d");
+        for(Candidate c : results){
+            System.out.println(c);
+        }
 
     }
 }

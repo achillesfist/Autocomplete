@@ -1,15 +1,18 @@
 
 public class Candidate {
+    String word;
+    int confidence;
 
-    AutocompleteProvider acp;
-
-    Candidate(AutocompleteProvider acp){
-        this.acp = acp;
+    public Candidate(String word, int confidence){
+        this.word = word;
+        this.confidence = confidence;
     }
-    public String getWord()
-    public Integer getConfidence(){
 
-        return 0;
+    public String getWord() { return word; }
+    public Integer getConfidence(){ return confidence; }
+
+    public String toString(){
+        return word + ": " + confidence;
     }
 
 }

@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -16,13 +17,11 @@ public class AutocompleteProvider {
      * @param passage : the passage you are training on
      */
     public void train(String passage){
-
         String[] dict = passage.replaceAll("[^a-zA-Z ]", "").toLowerCase().split(" ");
         trie = new Node("");
         for(String s : dict){
             learnWord(s);
         }
-
     }
 
     /**
@@ -41,6 +40,28 @@ public class AutocompleteProvider {
                 curr.isWord = true;
                 curr.weight++;
             }
+        }
+    }
+
+    public List<Candidate> getWords(String fragment){
+        List<Candidate> results = new LinkedList<Candidate>();
+
+        Node curr = trie;
+        for(char c : fragment.toCharArray()){
+            if(curr.children.containsKey(c)){
+                curr = curr.children.get(c);
+            }else{
+                return results;
+            }
+        }
+        returnWords(curr, results);
+        return results;
+    }
+
+    private void returnWords(Node n, List<Candidate> results){
+        if(n.isWord) results.add(new Candidate(n.word, n.weight));
+        for(char c : n.children.keySet()){
+            returnWords(n.children.get(c), results);
         }
     }
 
