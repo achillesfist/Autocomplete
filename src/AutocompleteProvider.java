@@ -7,46 +7,41 @@ import java.util.List;
  */
 public class AutocompleteProvider {
 
+    public Node trie;
 
-    private WeightedTrie = new WeightedTrie();
 
-    AutocompleteProvider(){
-        counts = new HashMap<>();
-    }
-
-    public String getCounts(){
-        String retStr = "";
-        int ctr = 0;
-        for (String s: counts.keySet())
-        {
-            ctr++;
-            retStr += s + " (" + counts.get(s) + ")";
-            if(ctr < counts.size()){
-                retStr += ", ";
-            }else{
-                retStr += " ";
-            }
-        }
-        System.out.println(retStr);
-        return retStr;
-    }
-
-    public List<Candidate> getWords(String fragment) {
-        ArrayList<Candidate> words = new ArrayList<>();
-        return words;
-    }
-
+    /**
+     * First we remove all punctuation and capitalization, then we split it into an array of strings.
+     * Then we loop through the array and insert each word into the trie
+     * @param passage : the passage you are training on
+     */
     public void train(String passage){
-        String[] words = passage.split(" ");
-        for(int i = 0; i< words.length; i++){
-            String k = words[i];
-            if(counts.containsKey(k)){
-                counts.put(k, counts.get(k) + 1);
-            }else{
-                counts.put(k, 1);
-            }
+
+        String[] dict = passage.replaceAll("[^a-zA-Z ]", "").toLowerCase().split(" ");
+        trie = new Node("");
+        for(String s : dict){
+            learnWord(s);
         }
 
+    }
+
+    /**
+     * This is the method that adds a word to the Trie
+     * @param word : word to be added
+     */
+    private void learnWord(String word){
+        Node curr = trie;
+        for(int i = 0; i < word.length(); i++){
+            if(!curr.children.containsKey(word.charAt(i))){
+                //Does not contain this letter, add new Node
+                curr.children.put(word.charAt(i), new Node(word.substring(0, i+1)));
+            }
+            curr = curr.children.get(word.charAt(i));
+            if(i == word.length() - 1){
+                curr.isWord = true;
+                curr.weight++;
+            }
+        }
     }
 
 
