@@ -3,13 +3,9 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by Evelyn on 7/19/2018.
- */
 public class AutocompleteProvider {
 
-    public Node trie;
-
+    public Node trie = new Node("");
 
     /**
      * First we remove all punctuation and capitalization, then we split it into an array of strings.
@@ -18,7 +14,6 @@ public class AutocompleteProvider {
      */
     public void train(String passage){
         String[] dict = passage.replaceAll("[^a-zA-Z ]", "").toLowerCase().split(" ");
-        trie = new Node("");
         for(String s : dict){
             learnWord(s);
         }
@@ -43,8 +38,13 @@ public class AutocompleteProvider {
         }
     }
 
+    /**
+     * This is the method that returns the autocomplete suggestions
+     * @param fragment
+     */
+
     public List<Candidate> getWords(String fragment){
-        List<Candidate> results = new LinkedList<Candidate>();
+        List<Candidate> results = new LinkedList<>();
 
         Node curr = trie;
         for(char c : fragment.toCharArray()){
@@ -57,6 +57,12 @@ public class AutocompleteProvider {
         returnWords(curr, results);
         return results;
     }
+
+    /**
+     * This recursively searches through the Trie to build a list of Candidates
+     * @param n : the Trie's root node
+     * @param results: the list to return
+     */
 
     private void returnWords(Node n, List<Candidate> results){
         if(n.isWord) results.add(new Candidate(n.word, n.weight));

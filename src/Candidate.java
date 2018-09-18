@@ -12,7 +12,7 @@ public class Candidate {
     public Integer getConfidence(){ return confidence; }
 
     public String toString(){
-        return word + ": " + confidence;
+        return "\"" + word +"\" (" + confidence + ")";
     }
 
 }
