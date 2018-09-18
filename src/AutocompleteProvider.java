@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class AutocompleteProvider {
 
@@ -44,7 +41,7 @@ public class AutocompleteProvider {
      */
 
     public List<Candidate> getWords(String fragment){
-        List<Candidate> results = new LinkedList<>();
+        List<Candidate> results = new ArrayList<>();
 
         Node curr = trie;
         for(char c : fragment.toCharArray()){
@@ -55,6 +52,7 @@ public class AutocompleteProvider {
             }
         }
         returnWords(curr, results);
+        Collections.sort(results);
         return results;
     }
 
@@ -70,6 +68,4 @@ public class AutocompleteProvider {
             returnWords(n.children.get(c), results);
         }
     }
-
-
 }

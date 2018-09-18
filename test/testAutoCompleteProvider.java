@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.List;
@@ -18,10 +19,19 @@ public class testAutoCompleteProvider {
         for(Candidate c : results){
             System.out.println(c);
         }
+    }
 
-        //todo: SORT CANDIDATE RESULTS BY WEIGHT
+    @Test
+    public void testCompareCandidates(){
+        Candidate moreLikely = new Candidate("the", 500);
+        Candidate lessLikely = new Candidate("supercalifragilisticexpialadocious", 1);
 
-        //TODO: Add actually interesting heuristics to weight
+        Assert.assertEquals(moreLikely.compareTo(lessLikely), -1);
+        Assert.assertEquals(lessLikely.compareTo(moreLikely), 1);
+        Assert.assertEquals(moreLikely.compareTo(moreLikely), 0);
+
 
     }
+
+
 }
