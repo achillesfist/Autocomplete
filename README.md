@@ -20,9 +20,9 @@ Therefore sadly you have to hit enter between submissions and it won't be able t
 
 - To train a passage, type an entire sentence ending with a period, question mark or exclamation point.
 
-To get autocomplete suggestions, type a fragment (with no punctuation).
+- To get autocomplete suggestions, type a fragment (with no punctuation).
 
-To quit, type a single period.
+- To quit, type a single period.
 
 ## Note
 
