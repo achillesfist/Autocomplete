@@ -1,7 +1,7 @@
 import java.util.*;
 
 /**
- * This class handles storing and retrieving information in the Trie.
+ * This class handles storing and retrieving suggestion information in the Trie.
  */
 public class AutocompleteProvider {
 

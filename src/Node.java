@@ -19,18 +19,4 @@ public class Node {
         isWord = false;
         weight = 0;
     }
-
-
-    public HashMap<Character, Node> getChildren(){
-        return children;
-    }
-
-    public String getFragment() {
-        return fragment;
-    }
-
-
-    public int getWeight() {return weight; }
-
-
 }
