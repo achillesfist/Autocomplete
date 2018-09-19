@@ -19,6 +19,7 @@ public class testAutoCompleteProvider {
         for(Candidate c : results){
             System.out.println(c);
         }
+        Assert.assertEquals(results.size(), 3);
     }
 
     @Test

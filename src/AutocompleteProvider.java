@@ -1,10 +1,16 @@
 import java.util.*;
 
+/**
+ * This class handles storing and retrieving information in the Trie.
+ */
 public class AutocompleteProvider {
 
+    /** trie represents the root node of the data structure **/
     public Node trie = new Node("");
 
     /**
+     * This method adds the passage to the Trie data structure
+     *
      * First we remove all punctuation and capitalization, then we split it into an array of strings.
      * Then we loop through the array and insert each word into the trie
      * @param passage : the passage you are training on
@@ -39,7 +45,6 @@ public class AutocompleteProvider {
      * This is the method that returns the autocomplete suggestions
      * @param fragment
      */
-
     public List<Candidate> getWords(String fragment){
         List<Candidate> results = new ArrayList<>();
 
@@ -61,9 +66,8 @@ public class AutocompleteProvider {
      * @param n : the Trie's root node
      * @param results: the list to return
      */
-
     private void returnWords(Node n, List<Candidate> results){
-        if(n.isWord) results.add(new Candidate(n.word, n.weight));
+        if(n.isWord) results.add(new Candidate(n.fragment, n.weight));
         for(char c : n.children.keySet()){
             returnWords(n.children.get(c), results);
         }

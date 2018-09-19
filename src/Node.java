@@ -2,19 +2,19 @@ import java.util.HashMap;
 
 /**
  * This represents a Node of a weighted Trie which will represent the words the user has already typed.
- * - word represents the word so far up to this Node
- * - children stores all the child Nodes of this Node
- * - isWord represents if this Node is the end of a Word
- * - weight stores the amount of times this word has been typed, if it is a word.
  */
 public class Node {
-    public String word;
+    /** fragment represents the fragment so far up to this Node */
+    public String fragment;
+    /** children stores all the child Nodes of this Node */
     public HashMap<Character, Node> children;
+    /** isWord represents if this Node is the end of a Word */
     public boolean isWord;
+    /** weight stores the amount of times this fragment has been typed, if it is a fragment. */
     public int weight;
 
     public Node(String character){
-        word = character;
+        fragment = character;
         this.children = new HashMap<>();
         isWord = false;
         weight = 0;
@@ -25,8 +25,8 @@ public class Node {
         return children;
     }
 
-    public String getWord() {
-        return word;
+    public String getFragment() {
+        return fragment;
     }
 
 

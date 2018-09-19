@@ -1,10 +1,10 @@
 /**
  * This class represents a candidate for the autocomplete algorithm.
- *  - word represents the word it is guessing
- *  - confidence represents how confidence the algorithm is in that guess
  */
 public class Candidate implements Comparable<Candidate>{
+    /** word represents the algorithm's guess */
     public String word;
+    /** confidence represents how confidence the algorithm is in that guess */
     public int confidence;
 
     public Candidate(String word, int confidence){

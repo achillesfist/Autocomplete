@@ -2,9 +2,7 @@ import java.util.Scanner;
 
 /**
  * This is the class you would run to start the application.
- *
  */
-
 public class Main {
     public static void main(String args[]){
         AutocompleteProvider acp = new AutocompleteProvider();
